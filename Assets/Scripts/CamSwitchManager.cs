@@ -18,9 +18,7 @@ public class CamSwitchManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(camViewChanged);
-
-        if (camViewChanged == false)
+        if ( !camViewChanged )
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -30,7 +28,7 @@ public class CamSwitchManager : MonoBehaviour
                 camFollowScript.enabled = false;
             }
         }
-        else if ( camViewChanged == true)
+        else if ( camViewChanged )
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
