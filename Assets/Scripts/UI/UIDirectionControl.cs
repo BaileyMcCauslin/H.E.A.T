@@ -11,6 +11,11 @@ public class UIDirectionControl : MonoBehaviour
     private void Start()
     {
         m_RelativeRotation = transform.parent.localRotation;
+        // Access the GameObject to which this script is attached
+        GameObject myGameObject = gameObject;
+
+        // You can now perform operations on myGameObject
+        Debug.Log("This script is attached to: " + myGameObject.name);
     }
 
 
