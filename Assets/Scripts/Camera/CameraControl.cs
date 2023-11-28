@@ -17,6 +17,11 @@ public class CameraControl : MonoBehaviour
     private void Awake()
     {
         m_Camera = GetComponentInChildren<Camera>();
+        // Access the GameObject to which this script is attached
+        GameObject myGameObject = gameObject;
+
+        // You can now perform operations on myGameObject
+        Debug.Log("This script is attached to: " + myGameObject.name);
     }
 
 

@@ -40,12 +40,15 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
 
-            playerRB.AddForce(Vector3.right * horizontalInput * Time.deltaTime
-                                                       * moveSpeed, ForceMode.Impulse);
+            playerRB.MovePosition( playerRB.position + 
+           ( moveSpeed * Time.deltaTime * verticalInput * transform.forward ) );
 
-            // Move player vertically with impulse
-            playerRB.AddForce(Vector3.forward * verticalInput * Time.deltaTime
-                                                       * moveSpeed, ForceMode.Impulse);
+            // playerRB.AddForce(Vector3.right * horizontalInput * Time.deltaTime
+            //                                            * moveSpeed, ForceMode.Impulse);
+
+            // // Move player vertically with impulse
+            // playerRB.AddForce(Vector3.forward * verticalInput * Time.deltaTime
+            //                                            * moveSpeed, ForceMode.Impulse);
         }
     }
 

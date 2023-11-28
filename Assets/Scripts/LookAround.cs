@@ -8,7 +8,11 @@ public class LookAround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+            // Access the GameObject to which this script is attached
+        GameObject myGameObject = gameObject;
+
+        // You can now perform operations on myGameObject
+        Debug.Log("This script is attached to: " + myGameObject.name);
     }
 
     // Update is called once per frame
