@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         bool cantMove = CamSwitchManager.camViewChanged;
+        playerRB.AddForce(Physics.gravity * playerRB.mass);
 
         // Move player horizontally with impulse
         if (!cantMove)
@@ -51,5 +52,4 @@ public class PlayerController : MonoBehaviour
             //                                            * moveSpeed, ForceMode.Impulse);
         }
     }
-
 }

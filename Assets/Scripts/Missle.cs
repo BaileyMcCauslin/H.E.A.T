@@ -10,7 +10,11 @@ public class Missle : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        Debug.Log("HIT");
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "ai")
+        {
+            Debug.Log("HIT");
+        }
     }
 
     // Update is called once per frame
