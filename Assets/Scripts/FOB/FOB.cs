@@ -15,11 +15,12 @@ public class FOB : MonoBehaviour
   }
 
   public void OnCollisionEnter(Collision collision) {
-    Missle missle = collision.gameObject.GetComponent<Missle>();
+    Missile missile = collision.gameObject.GetComponent<Missile>();
 
     //check to see if collision was with a missile
-    if (missle != null) {
-      health -= missle.damage;
+    if (missile != null) {
+      health -= missile.damage;
+      print(gameObject.name + " took " + missile.damage + " damage.\nRemaining health: " + health);
       
       if (health <= 0) {
         this.destroyed = true;
