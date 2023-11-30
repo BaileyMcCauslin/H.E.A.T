@@ -10,7 +10,7 @@ public class FOB : MonoBehaviour
 
   void Awake()
   {
-    health = 5000;
+    health = 500;
     ShowStructure();
   }
 
