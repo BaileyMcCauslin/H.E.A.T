@@ -26,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
                                       barrelShootingPosition.transform.position, 
                                      barrelShootingPosition.transform.rotation);
                 currentProj.GetComponent<Rigidbody>().AddRelativeForce(
-                        new Vector3(transform.position.x, Input.mousePosition.y, 
+                        new Vector3(transform.position.x, transform.position.y, 
                                                                 projectileVel));
             }
         }
