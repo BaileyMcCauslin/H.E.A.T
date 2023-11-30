@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class MainMenuAnimations : MonoBehaviour, IPointerEnterHandler, 
                                                              IPointerExitHandler
@@ -14,15 +13,17 @@ public class MainMenuAnimations : MonoBehaviour, IPointerEnterHandler,
     private bool isHovered = false;
     public int transitionSpeed;
 
-    private void Update()
+    void Update()
         {
-        if (isHovered)
+        // Check if the text is being hovered on by the mouse
+        if ( isHovered )
             {
             // Smoothly increase the font size
             buttonText.fontSize = Mathf.Lerp( buttonText.fontSize, hoverSize, 
                                              Time.deltaTime * transitionSpeed );
             }
 
+        // Otherwise, assume the text is not being hovered on by the mouse
         else
             {
             // Smoothly decrease the font size
@@ -32,13 +33,17 @@ public class MainMenuAnimations : MonoBehaviour, IPointerEnterHandler,
 
         }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    // Mouse Enter Function
+    public void OnPointerEnter( PointerEventData eventData )
         {
+        // Set flag to true
         isHovered = true;
         }
 
-    public void OnPointerExit(PointerEventData eventData)
+    // Mouse Exit Function
+    public void OnPointerExit( PointerEventData eventData )
         {
+        // Set flag to false
         isHovered = false;
         }
         
