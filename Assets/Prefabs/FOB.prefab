@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -2386533548171162286}
   m_Layer: 0
   m_Name: FOB
-  m_TagString: Untagged
+  m_TagString: FOB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,12 +94,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 12, y: 6, z: 12}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8, y: 6, z: 11}
+  m_Center: {x: 1, y: 0, z: -1}
 --- !u!1 &6236711493834971207
 GameObject:
   m_ObjectHideFlags: 0

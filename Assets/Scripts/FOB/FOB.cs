@@ -14,9 +14,13 @@ public class FOB : MonoBehaviour
     ShowStructure();
   }
 
-  public void OnCollisionEnter(Collision collision) {
-    Missile missile = collision.gameObject.GetComponent<Missile>();
+  void OnCollisionEnter(Collision collision) {
+    print("FOB collision detected");
 
+    GameObject collisionObject = collision.gameObject;
+    print(collisionObject);
+    Missile missile = collision.gameObject.GetComponent<Missile>();
+    
     //check to see if collision was with a missile
     if (missile != null) {
       health -= missile.damage;
@@ -40,7 +44,7 @@ public class FOB : MonoBehaviour
       if (child.name == "Structure") {
         child.gameObject.SetActive(true);
       }
-      else if (child.name == "Crater") {
+      else if (child.name == "Destroyed") {
         child.gameObject.SetActive(false);
       }
     }
