@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Ground
   - Missile
   - FOB
+=======
+  - ground
+  - ai
+  - player
+>>>>>>> cc5027e59909c02f3eb86414eb8b8e80b46b4fe3
   layers:
   - Default
   - TransparentFX
