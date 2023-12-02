@@ -11,11 +11,11 @@ public abstract class Tank : MonoBehaviour
   public float armorHealth;
   public float armorStrength; //A percentage value that reduces damage
   public Weapon weapon; // Could be used to change the weapon on the tank
-  public Missle[] missles;
+  public Missile[] missiles;
 
-  public int activeMissle;
+  public int activeMissile;
 
-  enum MISSLE_TYPES {
+  enum MISSILE_TYPES {
     basic, 
     he, // high damage, doesn't damage armor
     heat // bypasses armor
@@ -23,37 +23,39 @@ public abstract class Tank : MonoBehaviour
 
   void OnCollisionEnter(Collision collision)
   {
-    Missle missle = collision.gameObject.GetComponent<Missle>();
+    Missile missile = collision.gameObject.GetComponent<Missle>();
 
     //checks to see if the collision was a missle
-    if (missle != null) {
-      TakeDamage(missle);
+    if (missile != null) {
+      TakeDamage(missile);
     }  
   }
 
-  private virtual void TakeDamage(float missle) {
-    float totalDamage;
+  void TakeDamage(float missile) {
+    float totalDamage = 0;
     
-    switch (missle.type) {
-      case: MISSLE_TYPES.basic
-        armorHealth -= missle.damage;
+    switch (missile.type) {
+      case MISSILE_TYPES.basic:
+        armorHealth -= missile.damage;
         if(armorHealth > 0) {
-          totalDamage = missle.damage * armorStrength;
+          totalDamage = missile.damage * armorStrength;
         }
         break;
-      case: MISSLE_TYPES.he
-        totalDamage = missle.damage - armorHealth;
-      case: MISSLE_TYPES.heat
-        armorHealth -= missle.damage / 2;
-        totalDamage = missle.damage;
+      case MISSILE_TYPES.he:
+        totalDamage = missile.damage - armorHealth;
+        break;
+      case MISSILE_TYPES.heat:
+        armorHealth -= missile.damage / 2;
+        totalDamage = missile.damage;
+        break;
     }
 
     health -= totalDamage;
   }
 
-  private void ShootMissle() {
-    if (missles[activeMissle] == 0) {
-      activeMissle = MISSLE_TYPES.basic;
+  private void ShootMissile() {
+    if (missles[activeMissile] == 0) {
+      activeMissile = MISSILE_TYPES.basic;
       //Should update the missle type on the HUD UI
     }
 

@@ -11,6 +11,6 @@ public class Tank_Light : Tank
     turretTurnSpeed = 80f;
     armorHealth = 50;
     armorStrength = .25f;
-    missles = {-1, 2, 4};
+    missles = new int[] {-1, 2, 4};
   }
 }
