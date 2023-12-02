@@ -393,7 +393,8 @@ MonoBehaviour:
   activeMissile: 0
 --- !u!1 &3916225007155662313
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 0        Debug.Log(collision.gameObject);
+
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
