@@ -11,7 +11,7 @@ public abstract class Tank : MonoBehaviour
   public float armorHealth;
   public float armorStrength; //A percentage value that reduces damage
   public Weapon weapon; // Could be used to change the weapon on the tank
-  public Missile[] missiles;
+  public int[] missiles;
 
   public int activeMissile;
 
@@ -21,9 +21,13 @@ public abstract class Tank : MonoBehaviour
     heat // bypasses armor
   }
 
+  void Awake() {
+    missiles = new int[] {-1, 10, 4};
+  }
+
   void OnCollisionEnter(Collision collision)
   {
-    Missile missile = collision.gameObject.GetComponent<Missle>();
+    Missile missile = collision.gameObject.GetComponent<Missile>();
 
     //checks to see if the collision was a missle
     if (missile != null) {
@@ -31,20 +35,20 @@ public abstract class Tank : MonoBehaviour
     }  
   }
 
-  void TakeDamage(float missile) {
+  void TakeDamage(Missile missile) {
     float totalDamage = 0;
     
     switch (missile.type) {
-      case MISSILE_TYPES.basic:
+      case (int)MISSILE_TYPES.basic:
         armorHealth -= missile.damage;
         if(armorHealth > 0) {
           totalDamage = missile.damage * armorStrength;
         }
         break;
-      case MISSILE_TYPES.he:
+      case (int)MISSILE_TYPES.he:
         totalDamage = missile.damage - armorHealth;
         break;
-      case MISSILE_TYPES.heat:
+      case (int)MISSILE_TYPES.heat:
         armorHealth -= missile.damage / 2;
         totalDamage = missile.damage;
         break;
@@ -54,8 +58,8 @@ public abstract class Tank : MonoBehaviour
   }
 
   private void ShootMissile() {
-    if (missles[activeMissile] == 0) {
-      activeMissile = MISSILE_TYPES.basic;
+    if (missiles[activeMissile] == 0) {
+      activeMissile = (int)MISSILE_TYPES.basic;
       //Should update the missle type on the HUD UI
     }
 

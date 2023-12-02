@@ -6,7 +6,9 @@ public class Missile : MonoBehaviour
 {
     public float killTime = 0.0f;
     public float itemExpireTime = 5.0f;
-    public double damage = 50;
+    public float damage = 50;
+
+    public int type;
 
     void OnCollisionEnter(Collision collision)
     {

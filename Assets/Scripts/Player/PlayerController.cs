@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     // On Collision Enter Function
     void OnCollisionEnter( Collision other )
         {
+          print("Tank collided with " + other.gameObject);
         // Check if game object colliding has a mesh collider
         if( other.gameObject.GetComponent<MeshCollider>() != null )
             {
