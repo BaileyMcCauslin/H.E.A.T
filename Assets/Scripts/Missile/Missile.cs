@@ -12,7 +12,12 @@ public class Missile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
+
         Debug.Log("HIT:  " + collision.gameObject);
+        if (collision.gameObject.tag == "ai")
+        {
+            Debug.Log("Hit AI tag");
+        }
     }
 
     // Update is called once per frame

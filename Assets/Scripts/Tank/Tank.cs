@@ -62,7 +62,7 @@ public class Tank : MonoBehaviour
     }  
   }
 
-  public virtual void TakeDamage(Missile missile) {
+  void TakeDamage(Missile missile) {
     float totalDamage = 0;
     
     switch (missile.type) {
@@ -92,7 +92,12 @@ public class Tank : MonoBehaviour
 
   void ShootMissle() {
     if (!gameObject.activeInHierarchy) {
-      return;
+      return; 
+    }
+    
+    if (missiles[activeMissile] == 0) {
+      activeMissile = (int)MISSILE_TYPES.basic;
+      //Should update the missle type on the HUD UI
     }
 
     if (Time.time < nextShotTime) {
