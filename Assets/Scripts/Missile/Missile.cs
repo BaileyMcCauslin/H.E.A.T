@@ -13,7 +13,7 @@ public class Missile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        Debug.Log(collision.gameObject.tag);
+        Debug.Log(collision.gameObject);
         if (collision.gameObject.tag == "ai")
         {
             Debug.Log("HIT");
