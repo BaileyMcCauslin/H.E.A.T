@@ -95,7 +95,7 @@ public class Tank : MonoBehaviour
       return; 
     }
     
-    if (missiles[activeMissile] == 0) {
+    if (ammunition[activeMissile] == 0) {
       activeMissile = (int)MISSILE_TYPES.basic;
       //Should update the missle type on the HUD UI
     }
