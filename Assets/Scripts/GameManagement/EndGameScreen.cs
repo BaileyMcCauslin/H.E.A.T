@@ -16,6 +16,7 @@ public class EndGameScreen : MonoBehaviour
 
   public void ShowScreen() {
     this.gameObject.SetActive(true);
+    OutcomeText.gameObject.SetActive(true);
   }
 
   public void MainMenu() {
