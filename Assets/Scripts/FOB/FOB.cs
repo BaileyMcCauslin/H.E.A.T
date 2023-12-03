@@ -35,21 +35,27 @@ public class FOB : MonoBehaviour
     if (this.destroyed) {
       // This should take players to some end game screen showing the winner.
       // For now just goes to main menu.
-      SceneManager.LoadScene("Main Menu");
+      if (this.gameObject.tag == "Enemy") {
+        GameManager.manager.EndGame(true);
+      }
+      else {
+        print("Player FOB destroyed");
+        GameManager.manager.EndGame(false);
+      }
     }
+
+    Destroy(collider.gameObject);
   }
 
   private void ShowDestroyed() {
     foreach (Transform child in transform) {
       if (child.name == "Structure") {
-        child.gameObject.SetActive(true);
-      }
-      else if (child.name == "Destroyed") {
         child.gameObject.SetActive(false);
       }
+      else if (child.name == "Destroyed") {
+        child.gameObject.SetActive(true);
+      }
     }
-
-    destroyed = true;
   }
 
   private void ShowStructure() {

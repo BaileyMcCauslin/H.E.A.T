@@ -101,6 +101,10 @@ public class Tank : MonoBehaviour
     if (health <= 0) {
       print(this.gameObject + " destroyed!");
       Destroy(this.gameObject);
+
+      if(this.gameObject.tag == "Player") {
+        GameManager.manager.EndGame(false);
+      }
     }
   }
 
