@@ -329,8 +329,8 @@ Rigidbody:
   m_GameObject: {fileID: 3354916976622783175}
   serializedVersion: 2
   m_Mass: 1000
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_Drag: 0
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -365,6 +365,7 @@ MonoBehaviour:
   horizontalInput: 0
   verticalInput: 0
   maxSpeed: 11
+  tank: {fileID: -9015855370762402122}
   turnSpeed: 100
 --- !u!114 &-9015855370762402122
 MonoBehaviour:
@@ -393,8 +394,7 @@ MonoBehaviour:
   activeMissile: 0
 --- !u!1 &3916225007155662313
 GameObject:
-  m_ObjectHideFlags: 0        Debug.Log(collision.gameObject);
-
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 2541212771967017924}
   - component: {fileID: 4455266973698917106}
   m_Layer: 0
-  m_Name: TankFree_Canon
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

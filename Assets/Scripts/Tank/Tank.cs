@@ -19,14 +19,13 @@ public class Tank : MonoBehaviour
   [ SerializeField ] GameObject barrelShootingPosition;
   //Missile
   public GameObject missile;
-  public float projectileVelocity = 3500.0f;
-  
+  public float projectileVelocity = 200.0f;
 
   public int[] ammunition = new int[] {-1, 10, 5};
 
   public int activeMissile;
 
-  enum MISSILE_TYPES {
+  public enum MISSILE_TYPES {
     basic, 
     he, // high damage, doesn't damage armor
     heat // bypasses armor
@@ -37,29 +36,33 @@ public class Tank : MonoBehaviour
   }
 
   void Update() {
-    if (Input.GetKeyDown(KeyCode.RightAlt) || Input.GetKeyDown(KeyCode.LeftAlt)) {
-      if (activeMissile == (int)MISSILE_TYPES.heat) {  
-        activeMissile = 0;
-      }
-      else {
-        activeMissile += 1;
-        return;
-      }
-    }
-    if (Input.GetMouseButtonDown(0)) {
-      ShootMissle();
-    }
+    // if (Input.GetKeyDown(KeyCode.RightAlt) || Input.GetKeyDown(KeyCode.LeftAlt)) {
+    //   if (activeMissile == (int)MISSILE_TYPES.heat) {  
+    //     activeMissile = 0;
+    //   }
+    //   else {
+    //     activeMissile += 1;
+    //     return;
+    //   }
+    // }
+    // if (Input.GetMouseButtonDown(0)) {
+    //   ShootMissle();
+    // }
 
   }
 
-  void OnCollisionEnter(Collision collision)
+  private void OnTriggerEnter(Collider collider)
   {
-    Missile missile = collision.gameObject.GetComponent<Missile>();
+    print(collider + " collided with tank: " + this.gameObject);
+    Missile missile = collider.gameObject.GetComponent<Missile>();
 
     //checks to see if the collision was a missle
     if (missile != null) {
       TakeDamage(missile);
-    }  
+    }
+
+    // Destroy the projectile colliding with tank
+    Destroy(collider.gameObject);
   }
 
   void TakeDamage(Missile missile) {
@@ -67,9 +70,14 @@ public class Tank : MonoBehaviour
     
     switch (missile.type) {
       case (int)MISSILE_TYPES.basic:
+        print(this.gameObject + " hit with basic missile");
         armorHealth -= missile.damage;
+        print(missile.damage + " armor damage. " + armorHealth + " armor remaining");
         if(armorHealth > 0) {
           totalDamage = missile.damage * armorStrength;
+        }
+        else {
+          totalDamage = missile.damage;
         }
         break;
       case (int)MISSILE_TYPES.he:
@@ -87,10 +95,16 @@ public class Tank : MonoBehaviour
         break;
     }
 
+    print(totalDamage + " damage taken. " + health + " health remaining");
     health -= totalDamage;
+
+    if (health <= 0) {
+      print(this.gameObject + " destroyed!");
+      Destroy(this.gameObject);
+    }
   }
 
-  void ShootMissle() {
+  public void ShootMissle() {
     if (!gameObject.activeInHierarchy) {
       return; 
     }
@@ -113,6 +127,8 @@ public class Tank : MonoBehaviour
                             barrelShootingPosition.transform.rotation);
       currentMissile.GetComponent<Rigidbody>().AddRelativeForce(
               new Vector3(transform.position.x, transform.position.y, projectileVelocity));
+
+      print("shot missile: " + currentMissile);
     
       nextShotTime = Time.time + reloadTime;
     }
