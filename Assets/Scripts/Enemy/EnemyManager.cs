@@ -55,5 +55,9 @@ public class EnemyManager : MonoBehaviour
     ENEMIES.Remove(enemy);
     enemyObjects.Remove(enemyObject);
     Destroy(enemyObject);
+
+    if (ENEMIES.Count == 0) {
+      GameManager.manager.EndGame(true);
+    }
   }
 }

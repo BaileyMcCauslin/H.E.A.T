@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: -9069514330456276501}
   m_Layer: 0
   m_Name: Red Tank
-  m_TagString: ai
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
