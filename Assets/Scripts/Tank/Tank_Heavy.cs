@@ -7,10 +7,10 @@ public class Tank_Heavy : Tank
   void Awake()
   {
     // health = 400;
-    // speed = 6f;
+    // maxSpeed = 6f;
     // turretTurnSpeed = 20f;
     // armorHealth = 200;
     // armorStrength = .75f;
-    // missles = new int[] {-1, 10, 4};
+    // ammunition = new int[] {-1, 10, 4};
   }
 }

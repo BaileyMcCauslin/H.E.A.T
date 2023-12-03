@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 733888915786454390}
   - component: {fileID: 1831877370556612070}
   - component: {fileID: 484110570479768068}
-  - component: {fileID: 7345348738540920094}
+  - component: {fileID: -9015855370762402122}
   m_Layer: 0
   m_Name: Green Tank
   m_TagString: Untagged
@@ -329,8 +329,8 @@ Rigidbody:
   m_GameObject: {fileID: 3354916976622783175}
   serializedVersion: 2
   m_Mass: 1000
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_Drag: 0
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -365,8 +365,9 @@ MonoBehaviour:
   horizontalInput: 0
   verticalInput: 0
   maxSpeed: 11
+  tank: {fileID: -9015855370762402122}
   turnSpeed: 100
---- !u!114 &7345348738540920094
+--- !u!114 &-9015855370762402122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,12 +376,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3354916976622783175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba6628160d4dd34f8f459f55dce4d24, type: 3}
+  m_Script: {fileID: 11500000, guid: cb1d4e7be6de3f9f68bc5d5786b907f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 200
+  maxSpeed: 20
+  armorHealth: 100
+  armorStrength: 0.25
+  nextShotTime: 0
+  gun: {fileID: 0}
+  reloadTime: 50
+  turretTurnSpeed: 10
   barrelShootingPosition: {fileID: 5771935649040214604}
-  missile: {fileID: 8362787410197010642, guid: 315a7544da4ce59ecb22f8a20a355b3a, type: 3}
-  projectileVel: 1000
+  missile: {fileID: 6299071353543684385, guid: 7c10c31acbca29f459d7eaab559ebf9a, type: 3}
+  projectileVelocity: 3500
+  ammunition: 
+  activeMissile: 0
 --- !u!1 &3916225007155662313
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +404,7 @@ GameObject:
   - component: {fileID: 2541212771967017924}
   - component: {fileID: 4455266973698917106}
   m_Layer: 0
-  m_Name: TankFree_Canon
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,7 +598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5771935649040214604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.906}
+  m_LocalPosition: {x: 0, y: 0, z: 1.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

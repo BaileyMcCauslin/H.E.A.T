@@ -14,12 +14,12 @@ public class FOB : MonoBehaviour
     ShowStructure();
   }
 
-  void OnCollisionEnter(Collision collision) {
+  void OnTriggerEnter(Collider collider) {
     print("FOB collision detected");
 
-    GameObject collisionObject = collision.gameObject;
+    GameObject collisionObject = collider.gameObject;
     print(collisionObject);
-    Missile missile = collision.gameObject.GetComponent<Missile>();
+    Missile missile = collider.gameObject.GetComponent<Missile>();
     
     //check to see if collision was with a missile
     if (missile != null) {

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [ SerializeField ] float horizontalInput;
     [ SerializeField ] float verticalInput;
     [ SerializeField ] float maxSpeed;
+    [ SerializeField ]public Tank tank;
     Rigidbody playerRB;
     public float turnSpeed = 10.0f;
 
@@ -18,7 +19,22 @@ public class PlayerController : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         }
 
-    // Update is called once per frame
+    void Update() {
+      if (Input.GetKeyDown(KeyCode.RightAlt) || Input.GetKeyDown(KeyCode.LeftAlt)) {
+        if (tank.activeMissile == (int)Tank.MISSILE_TYPES.heat) {  
+          tank.activeMissile = 0;
+        }
+        else {
+          tank.activeMissile += 1;
+          return;
+        }
+      }
+
+      if (Input.GetMouseButtonDown(0)) {
+        tank.ShootMissle();
+      }
+    }
+
     void FixedUpdate()
         {
         // Set input variables to adequate input

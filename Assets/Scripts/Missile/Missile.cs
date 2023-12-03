@@ -7,16 +7,16 @@ public class Missile : MonoBehaviour
     public float killTime = 0.0f;
     public float itemExpireTime = 5.0f;
     public float damage = 50;
-
-    public int type;
+    public int type = 0; //set to others when adding other missile types
 
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        Debug.Log(collision.gameObject);
+
+        Debug.Log("HIT:  " + collision.gameObject);
         if (collision.gameObject.tag == "ai")
         {
-            Debug.Log("HIT");
+            Debug.Log("Hit AI tag");
         }
     }
 
