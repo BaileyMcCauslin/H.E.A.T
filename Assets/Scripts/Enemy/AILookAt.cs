@@ -10,9 +10,12 @@ public class AILookAt : MonoBehaviour
     void Update()
     {
         //Always point AI at player
-        Vector3 point = new Vector3(player.transform.position.x,
-                                        player.transform.position.y,
-                                            player.transform.position.z);
-        transform.LookAt(point, Vector3.up);
+        if (player != null)
+        {
+            Vector3 point = new Vector3(player.transform.position.x,
+                                    player.transform.position.y,
+                                        player.transform.position.z);
+            transform.LookAt(point, Vector3.up);
+        }
     }
 }

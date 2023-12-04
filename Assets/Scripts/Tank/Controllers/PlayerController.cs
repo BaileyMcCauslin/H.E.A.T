@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
     {
@@ -22,11 +23,15 @@ public class PlayerController : MonoBehaviour
     bool isUpKeyPressed;
     bool isDownKeyPressed;
 
+    public Image arrowImage;
+    private RectTransform rectTransform;
+
     // Start is called before the first frame update
     void Start()
         {
         // Get the rigid body of the object this script is attached to
         playerRB = GetComponent<Rigidbody>();
+        rectTransform = arrowImage.GetComponent<RectTransform>();
 
         // initialize audio sources
         idleEngineAudioSource = gameObject.AddComponent<AudioSource>();
@@ -90,8 +95,18 @@ public class PlayerController : MonoBehaviour
                                                             * horizontalInput );
             }
 
-          // check for tank moving to play sound
-          if(isDownKeyPressed || isLeftKeyPressed || isRightKeyPressed || isUpKeyPressed)
+        float playerRotation = transform.eulerAngles.y;
+        arrowImage.rectTransform.rotation = Quaternion.Euler(0f, 0f, -playerRotation);
+
+        // Set the position of the arrow in front of the player
+        float distanceInFront = 6.0f; // Adjust this value based on how far in front you want the arrow
+        Vector3 newPosition = transform.position + transform.forward * distanceInFront;
+        newPosition.y = transform.position.y; // Maintain the same height
+        arrowImage.rectTransform.position = Camera.main.WorldToScreenPoint(newPosition);
+
+
+        // check for tank moving to play sound
+        if (isDownKeyPressed || isLeftKeyPressed || isRightKeyPressed || isUpKeyPressed)
           {
             if (!drivingEngineAudioSource.isPlaying)
             {

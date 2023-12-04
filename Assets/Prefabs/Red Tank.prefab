@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 1296822866214697318}
   - component: {fileID: 8128737372202418418}
   - component: {fileID: -7707676785653893805}
-  - component: {fileID: -9069514330456276501}
   m_Layer: 0
   m_Name: Red Tank
   m_TagString: Enemy
@@ -383,31 +382,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8, y: 2.5, z: 2.6642036}
   m_Center: {x: 0.0000003874302, y: 0.06295732, z: -0.038929284}
---- !u!114 &-9069514330456276501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503318476722469206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb1d4e7be6de3f9f68bc5d5786b907f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  maxSpeed: 20
-  armorHealth: 100
-  armorStrength: 0.25
-  nextShotTime: 0
-  gun: {fileID: 0}
-  reloadTime: 50
-  turretTurnSpeed: 10
-  barrelShootingPosition: {fileID: 0}
-  missile: {fileID: 0}
-  projectileVelocity: 200
-  ammunition: ffffffff0a00000005000000
-  activeMissile: 0
 --- !u!1 &3745786531496338126
 GameObject:
   m_ObjectHideFlags: 0

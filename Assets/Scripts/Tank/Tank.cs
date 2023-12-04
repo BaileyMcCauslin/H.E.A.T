@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
 {
@@ -25,7 +26,10 @@ public class Tank : MonoBehaviour
 
   public int activeMissile;
 
-  public enum MISSILE_TYPES {
+  public Image healthBar;
+  private RectTransform rectTransform;
+
+    public enum MISSILE_TYPES {
     basic, 
     he, // high damage, doesn't damage armor
     heat // bypasses armor
@@ -66,6 +70,11 @@ public class Tank : MonoBehaviour
 
   }
 
+    void Start()
+    {
+        rectTransform = healthBar.GetComponent<RectTransform>();
+    }
+
   private void OnTriggerEnter(Collider collider)
   {
     print(collider + " collided with tank: " + this.gameObject);
@@ -74,6 +83,7 @@ public class Tank : MonoBehaviour
     //checks to see if the collision was a missle
     if (missile != null) {
       TakeDamage(missile);
+      rectTransform.sizeDelta = new Vector2(rectTransform.rect.width - 35, rectTransform.rect.height);
 
       shotExplosionAudioSource.Play();
     }
