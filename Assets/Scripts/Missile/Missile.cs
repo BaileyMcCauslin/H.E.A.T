@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
+    [SerializeField] GameObject explosionPrefab;
     public float killTime = 0.0f;
     public float itemExpireTime = 5.0f;
     public float damage = 50;
@@ -12,6 +13,7 @@ public class Missile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
 
         Debug.Log("HIT:  " + collision.gameObject);
 

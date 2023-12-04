@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2563761270285659494}
   - component: {fileID: 7775247368264940683}
   - component: {fileID: 8945019462753146011}
+  - component: {fileID: -6652138240411091017}
   m_Layer: 0
   m_Name: Green Missile
   m_TagString: Untagged
@@ -131,3 +132,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!111 &-6652138240411091017
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362787410197010642}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
