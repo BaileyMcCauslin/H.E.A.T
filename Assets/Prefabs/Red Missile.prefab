@@ -103,6 +103,8 @@ MonoBehaviour:
   itemExpireTime: 5
   damage: 50
   type: 0
+  explosionAudioSource: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: d53229a4a54e4164c99e849314731210, type: 3}
 --- !u!54 &2843694192649751086
 Rigidbody:
   m_ObjectHideFlags: 0

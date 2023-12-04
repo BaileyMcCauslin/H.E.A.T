@@ -11,19 +11,19 @@ public class Missile : MonoBehaviour
     public int type = 0; //set to others when adding other missile types
 
     //Audio
-    [SerializeField] private AudioSource explosionAudioSource;
-    [SerializeField] private AudioClip explosionSound;
+    public AudioSource explosionAudioSource;
+    public AudioClip explosionSound;
 
     void Awake() {
       explosionAudioSource = gameObject.AddComponent<AudioSource>();
       explosionAudioSource.clip = explosionSound;
-      explosionAudioSource.volume = 1f;
+      explosionAudioSource.volume = 20f;
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        explosionAudioSource.Play();
         Instantiate(explosionPrefab, transform.position, transform.rotation);
+        explosionAudioSource.Play();
 
         Debug.Log("HIT:  " + collider.gameObject);
 
