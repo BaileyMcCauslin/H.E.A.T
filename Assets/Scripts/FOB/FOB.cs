@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FOB : MonoBehaviour
 {
-  private double health;
+  [ SerializeField ] private double health;
   private bool destroyed;
 
   void Awake()
