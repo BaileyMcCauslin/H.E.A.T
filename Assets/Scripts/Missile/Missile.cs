@@ -14,6 +14,7 @@ public class Missile : MonoBehaviour
         Destroy(gameObject);
 
         Debug.Log("HIT:  " + collision.gameObject);
+
         if (collision.gameObject.tag == "ai")
         {
             Debug.Log("Hit AI tag");

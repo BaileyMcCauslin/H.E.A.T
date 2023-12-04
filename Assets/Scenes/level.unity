@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -559,9 +559,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -9015855370762402122, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: shotFiringSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d53229a4a54e4164c99e849314731210, type: 3}
+    - target: {fileID: -9015855370762402122, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: projectileVelocity
       value: 3500
       objectReference: {fileID: 0}
+    - target: {fileID: -9015855370762402122, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: shotExplosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f3e6c88b5c1e97408c3d53efebce09e, type: 3}
     - target: {fileID: -9015855370762402122, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: ammunition.Array.size
       value: 3
@@ -582,6 +590,66 @@ PrefabInstance:
       propertyPath: ammunition.Array.data[2]
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 484110570479768068, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: maxSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 484110570479768068, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 484110570479768068, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: idleEngineSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cbc7f5dab3822e43a0caffe8c07b20b, type: 3}
+    - target: {fileID: 484110570479768068, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: drivingEngineSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 72298773883a15347927d8f1e6b02082, type: 3}
+    - target: {fileID: 733888915786454390, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 733888915786454390, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831877370556612070, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831877370556612070, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831877370556612070, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831877370556612070, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Center.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831877370556612070, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420407423193740654, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420407423193740654, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673774928726637424, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673774928726637424, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_Name
       value: Green Tank
@@ -589,6 +657,14 @@ PrefabInstance:
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602611970427923943, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602611970427923943, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4024992501267447158, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_RootOrder
@@ -600,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024992501267447158, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 4024992501267447158, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -638,6 +714,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1549837192}
+    - target: {fileID: 7781620851070094643, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781620851070094643, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7345348738540920094, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
@@ -2261,23 +2345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c76da3be97d2645bef70064b44804e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.25
-  scaleX: 5
-  scaleZ: 20
-  offsetX: 0
-  offsetZ: 0
-  isLinkOffsetScalePositiveX: 0
-  isLinkOffsetScaleNegativeX: 0
-  isLinkOffsetScalePositiveZ: 0
-  isLinkOffsetScaleNegativeZ: 0
-  phase: 0
-  m_2PI: 6.2831855
-  originalPosition: {x: 0, y: 0, z: 0}
-  pivot: {x: 0, y: 0, z: 0}
-  pivotOffset: {x: 0, y: 0, z: 0}
-  isInverted: 0
-  aiRB: {fileID: 0}
-  turnSpeed: 10
 --- !u!64 &609293164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7011,6 +7078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4748406301991604735, guid: 159290b2725e7384a9f927be611ef64b, type: 3}
+      propertyPath: panSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5401290983528805035, guid: 159290b2725e7384a9f927be611ef64b, type: 3}
       propertyPath: m_Name
       value: Main Camera

@@ -31,8 +31,23 @@ public class Tank : MonoBehaviour
     heat // bypasses armor
   }
 
+  public AudioClip shotExplosionSound;
+  public AudioClip shotFiringSound;
+  private AudioSource shotFiringAudioSource;
+  private AudioSource shotExplosionAudioSource;
+  
+
   void Awake() {
     nextShotTime = 0;
+
+    // initialize audio sources
+    shotFiringAudioSource = gameObject.AddComponent<AudioSource>();
+    shotFiringAudioSource.clip = shotFiringSound;
+    shotFiringAudioSource.volume = 1f;
+
+    shotExplosionAudioSource = gameObject.AddComponent<AudioSource>();
+    shotExplosionAudioSource.clip = shotExplosionSound;
+    shotExplosionAudioSource.volume = 1f;
   }
 
   void Update() {
@@ -59,6 +74,8 @@ public class Tank : MonoBehaviour
     //checks to see if the collision was a missle
     if (missile != null) {
       TakeDamage(missile);
+
+      shotExplosionAudioSource.Play();
     }
 
     // Destroy the projectile colliding with tank
@@ -134,6 +151,8 @@ public class Tank : MonoBehaviour
 
       print("shot missile: " + currentMissile);
     
+      shotFiringAudioSource.Play();
+
       nextShotTime = Time.time + reloadTime;
     }
   }
