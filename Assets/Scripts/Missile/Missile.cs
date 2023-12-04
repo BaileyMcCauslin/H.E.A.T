@@ -10,17 +10,29 @@ public class Missile : MonoBehaviour
     public float damage = 50;
     public int type = 0; //set to others when adding other missile types
 
-    void OnCollisionEnter(Collision collision)
+    //Audio
+    [SerializeField] private AudioSource explosionAudioSource;
+    [SerializeField] private AudioClip explosionSound;
+
+    void Awake() {
+      explosionAudioSource = gameObject.AddComponent<AudioSource>();
+      explosionAudioSource.clip = explosionSound;
+      explosionAudioSource.volume = 1f;
+    }
+
+    void OnTriggerEnter(Collider collider)
     {
-        Destroy(gameObject);
+        explosionAudioSource.Play();
         Instantiate(explosionPrefab, transform.position, transform.rotation);
 
-        Debug.Log("HIT:  " + collision.gameObject);
+        Debug.Log("HIT:  " + collider.gameObject);
 
-        if (collision.gameObject.tag == "ai")
+        if (collider.gameObject.tag == "ai")
         {
             Debug.Log("Hit AI tag");
         }
+
+        Destroy(gameObject);
     }
 
     // Update is called once per frame

@@ -15,7 +15,7 @@ public class FOB : MonoBehaviour
   }
 
   void OnTriggerEnter(Collider collider) {
-    print("FOB collision detected");
+    // print("FOB collision detected");
 
     GameObject collisionObject = collider.gameObject;
     print(collisionObject);
@@ -24,7 +24,7 @@ public class FOB : MonoBehaviour
     //check to see if collision was with a missile
     if (missile != null) {
       health -= missile.damage;
-      print(gameObject.name + " took " + missile.damage + " damage.\nRemaining health: " + health);
+      // print(gameObject.name + " took " + missile.damage + " damage.\nRemaining health: " + health);
       
       if (health <= 0) {
         this.destroyed = true;
