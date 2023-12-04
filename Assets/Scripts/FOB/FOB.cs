@@ -2,16 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FOB : MonoBehaviour
 {
   [ SerializeField ] private double health;
   private bool destroyed;
+  public Image healthBar;
+  public Image background;
+  private RectTransform rectTransform;
+  private RectTransform backRectTrans;
+    public Canvas canvas;
 
   void Awake()
   {
     health = 500;
     ShowStructure();
+    rectTransform = healthBar.GetComponent<RectTransform>();
+    backRectTrans = background.GetComponent<RectTransform>();
+  }
+
+  void Update()
+  {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 50f);
+        List<Collider> playerColliders = new List<Collider>();
+
+        foreach (Collider collider in hitColliders)
+        {
+            GameObject colliderGameObject = collider.gameObject;
+
+            if (colliderGameObject.CompareTag("Player"))
+            {
+                // Append the collider to the list
+                playerColliders.Add(collider);
+            }
+        }
+        Collider[] playerCollidersArray = playerColliders.ToArray();
+
+        if (playerCollidersArray.Length != 0)
+        {
+            canvas.enabled = true;
+            Vector3 worldPosition = transform.position;
+            worldPosition.y += 3.0f;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
+            rectTransform.position = screenPos;
+            backRectTrans.position = screenPos;
+        }
+        else
+        {
+            canvas.enabled = false;
+        }
   }
 
   void OnTriggerEnter(Collider collider) {
@@ -25,6 +65,7 @@ public class FOB : MonoBehaviour
     if (missile != null) {
       health -= missile.damage;
       print(gameObject.name + " took " + missile.damage + " damage.\nRemaining health: " + health);
+      rectTransform.sizeDelta = new Vector2(rectTransform.rect.width - 15, rectTransform.rect.height);
       
       if (health <= 0) {
         this.destroyed = true;

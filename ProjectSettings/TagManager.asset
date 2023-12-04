@@ -10,6 +10,7 @@ TagManager:
   - player
   - FOB
   - Enemy
+  - player_missle
   layers:
   - Default
   - TransparentFX

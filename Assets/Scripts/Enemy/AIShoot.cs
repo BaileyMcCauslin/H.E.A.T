@@ -9,6 +9,7 @@ public class AIShoot : MonoBehaviour
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
     public float shootRadius = 50.0f;
+    public Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class AIShoot : MonoBehaviour
         {
             GameObject colliderGameObject = collider.gameObject;
 
-            if (colliderGameObject.CompareTag("player"))
+            if (colliderGameObject.CompareTag("Player"))
             {
                 // Append the collider to the list
                 playerColliders.Add(collider);
@@ -40,6 +41,7 @@ public class AIShoot : MonoBehaviour
 
         if (playerCollidersArray.Length != 0)
         {
+            canvas.enabled = true;
             if (Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
@@ -48,6 +50,10 @@ public class AIShoot : MonoBehaviour
                 currentProj.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
                                                                 (transform.position.x, transform.position.y, projectileVel));
             }
+        }
+        else
+        {
+            canvas.enabled = false;
         }
     }
 }
