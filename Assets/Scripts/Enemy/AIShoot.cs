@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AIShoot : MonoBehaviour
 {
-    public GameObject missile;
+    [SerializeField] public GameObject missile;
     public float projectileVel = 3500.0f;
     public float fireRate = 2f;
-    private float nextFire = 0.0f;
+    private float nextFireTime = 0.0f;
     public float shootRadius = 50.0f;
     public Canvas canvas;
 
@@ -42,14 +42,21 @@ public class AIShoot : MonoBehaviour
 
         if (playerCollidersArray.Length != 0)
         {
+            print("Player in collider array");
+            print("next fire time: " + nextFireTime);
+            print("Time: " + Time.time);
             canvas.enabled = true;
-            if (Time.time > nextFire)
+            if (Time.time > nextFireTime)
             {
-                nextFire = Time.time + fireRate;
+                print("AI firing");
+                nextFireTime = Time.time + fireRate;
+                print("set next fire time: " + nextFireTime);
                 Vector3 barrelTipPosition = transform.position + transform.forward * 6.0f;
                 GameObject currentProj = Instantiate(missile, barrelTipPosition, transform.rotation);
                 currentProj.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
                                                                 (transform.position.x, transform.position.y, projectileVel));
+
+                print("Enemy missile: " + currentProj);
             }
         }
         else

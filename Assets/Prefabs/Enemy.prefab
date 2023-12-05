@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  scaleX: 4
-  scaleZ: 6
+  scaleX: 20
+  scaleZ: 20
   offsetX: 0
   offsetZ: 0
   isLinkOffsetScalePositiveX: 0
