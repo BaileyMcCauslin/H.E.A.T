@@ -13,6 +13,7 @@ public class Tank : MonoBehaviour
   public float armorHealth = 100.0f;
   public float armorStrength = 0.25f;
   public float nextShotTime = 0; //Initialized at zero so you can fire immediately
+  [SerializeField] public GameObject brokenTank;
   // Gun
   public Gun gun;
   public float reloadTime = 50.0f;
@@ -54,7 +55,7 @@ public class Tank : MonoBehaviour
     shotExplosionAudioSource.volume = 1f;
   }
 
-  void Update() {
+  void Update() {rectTransform.sizeDelta = new Vector2(rectTransform.rect.width - 35, rectTransform.rect.height);
     // if (Input.GetKeyDown(KeyCode.RightAlt) || Input.GetKeyDown(KeyCode.LeftAlt)) {
     //   if (activeMissile == (int)MISSILE_TYPES.heat) {  
     //     activeMissile = 0;
@@ -127,6 +128,9 @@ public class Tank : MonoBehaviour
 
     if (health <= 0) {
       print(this.gameObject + " destroyed!");
+      Vector3 brokenTankSpawn = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+      Instantiate(brokenTank, brokenTankSpawn, transform.rotation);
+
       Destroy(this.gameObject);
 
       if(this.gameObject.tag == "Player") {

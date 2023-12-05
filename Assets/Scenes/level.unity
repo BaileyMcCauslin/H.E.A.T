@@ -550,6 +550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9015855370762402122, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: brokenTank
+      value: 
+      objectReference: {fileID: 6189047526038359138, guid: ea7e7c8ee5895903ea036c41fb5656f1, type: 3}
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_Name
       value: Player

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] GameObject brokenTank;
     public float maxHealth = 200.0f;
     private float currentHealth;
     public Image healthBar;
@@ -49,7 +50,8 @@ public class Enemy : MonoBehaviour
         }
 
         if(currentHealth <= 0) {
-          //Todo add a destroyed tank display?
+          Instantiate(brokenTank, transform.position, rectTransform.rotation);
+
           Destroy(gameObject);
         }
     }
