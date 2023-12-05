@@ -400,17 +400,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5c7f2b3a98ec041a4298959b247da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
-  scaleX: 10
-  scaleZ: 10
+  speed: 2
+  scaleX: 2
+  scaleZ: 3
   offsetX: 0
   offsetZ: 0
   isLinkOffsetScalePositiveX: 0
   isLinkOffsetScaleNegativeX: 0
   isLinkOffsetScalePositiveZ: 0
   isLinkOffsetScaleNegativeZ: 0
-  turnSpeed: 100
-  timeBetweenStops: 10
+  turnSpeed: 10
+  timeBetweenStops: 5
 --- !u!114 &-2201042769347659978
 MonoBehaviour:
   m_ObjectHideFlags: 0
