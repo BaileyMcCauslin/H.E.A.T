@@ -80,7 +80,7 @@ public class Tank : MonoBehaviour
     print(collider + " collided with tank: " + this.gameObject);
     Missile missile = collider.gameObject.GetComponent<Missile>();
 
-    //checks to see if the collision was a missle
+    //checks to see if the collision was a missile
     if (missile != null) {
       TakeDamage(missile);
       rectTransform.sizeDelta = new Vector2(rectTransform.rect.width - 35, rectTransform.rect.height);
@@ -142,7 +142,7 @@ public class Tank : MonoBehaviour
     
     if (ammunition[activeMissile] == 0) {
       activeMissile = (int)MISSILE_TYPES.basic;
-      //Should update the missle type on the HUD UI
+      //Should update the missile type on the HUD UI
     }
 
     if (Time.time < nextShotTime) {
@@ -150,7 +150,7 @@ public class Tank : MonoBehaviour
     } else {
       if (this.ammunition[activeMissile] == 0) {
         activeMissile = (int)MISSILE_TYPES.basic;
-        //Should update the missle type on the HUD UI
+        //Should update the missile type on the HUD UI
       }
       
       GameObject currentMissile = Instantiate(missile, 

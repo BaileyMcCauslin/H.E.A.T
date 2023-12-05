@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 1008440848834691001}
   - component: {fileID: 5872941206543907047}
   - component: {fileID: -2201042769347659978}
+  - component: {fileID: -4648840520300692386}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -399,16 +400,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5c7f2b3a98ec041a4298959b247da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  scaleX: 20
-  scaleZ: 20
+  speed: 0.01
+  scaleX: 10
+  scaleZ: 10
   offsetX: 0
   offsetZ: 0
   isLinkOffsetScalePositiveX: 0
   isLinkOffsetScaleNegativeX: 0
   isLinkOffsetScalePositiveZ: 0
   isLinkOffsetScaleNegativeZ: 0
-  turnSpeed: 10
+  turnSpeed: 100
   timeBetweenStops: 10
 --- !u!114 &-2201042769347659978
 MonoBehaviour:
@@ -427,6 +428,19 @@ MonoBehaviour:
   fireRate: 2
   shootRadius: 50
   canvas: {fileID: 6952644013731119817, guid: 83696d4e9f213e64995ca28d10f8364d, type: 3}
+--- !u!114 &-4648840520300692386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979374202975465480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdc0a0655f1b6f4cb56f5ad9a09430b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
 --- !u!1 &4240061321372941466
 GameObject:
   m_ObjectHideFlags: 0

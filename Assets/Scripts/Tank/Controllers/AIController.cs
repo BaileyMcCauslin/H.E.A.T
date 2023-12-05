@@ -6,7 +6,7 @@ using UnityEngine;
 public class AIController : MonoBehaviour
 {
     //Fig 8 info
-    public float speed = 2;
+    public float speed = 0.05f;
     public float scaleX = 2;
     public float scaleZ = 3;
     public float offsetX = 0;
