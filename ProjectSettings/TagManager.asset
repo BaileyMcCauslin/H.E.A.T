@@ -8,7 +8,6 @@ TagManager:
   - ground
   - ai
   - player
-  - FOB
   - Enemy
   - player_missle
   layers:

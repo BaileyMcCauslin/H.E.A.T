@@ -12,31 +12,38 @@ public class EnemyManager : MonoBehaviour
   public Transform enemyAnchor;
 
   public int maxNumEnemies = 20;
-  public float spawnRadius = 50f;
+  public int spawnDistance = 50;
 
   void Awake() {
     ENEMIES = new List<Enemy>();
     enemyObjects = new List<GameObject>();
+    SpawnInitialEnemies();
     //TODO add a map size to Main class and set this to center of map instead of hard code
     // Vector3 tempPosition = new Vector3(50, 2, 50);
     // this.gameObject.transform.position = tempPosition;
     // print("Enemy spawn position: " + this.gameObject.transform.position); 
   }
 
-  void FixedUpdate() {
+  void Update() {
     //Use for testing but add automated spawn for all enemies (no key press) for demo
     if (Input.GetKey(KeyCode.X)) {
-      InstantiateEnemy();
+      SpawnEnemy();
     }
   }
 
-  public void InstantiateEnemy() {
+  public void SpawnEnemy() {
     GameObject enemyObject = Instantiate<GameObject>(enemyPrefab);
     enemyObjects.Add(enemyObject);
     print("created enemy: " + enemyObject);
     print("All enemies: " + enemyObjects);
 
-    enemyObject.transform.position = enemyAnchor.position;
+    Vector3 randomSpawn = new Vector3(
+      Random.Range(enemyAnchor.position.x - spawnDistance, enemyAnchor.position.x + spawnDistance),
+      2,
+      Random.Range(enemyAnchor.position.z - spawnDistance, enemyAnchor.position.z + spawnDistance)
+    );
+
+    enemyObject.transform.position = randomSpawn;
     print("enemy position: " + enemyObject.transform.position);
     
     Enemy enemy = enemyObject.GetComponent<Enemy>();
@@ -47,6 +54,12 @@ public class EnemyManager : MonoBehaviour
       destroyEnemy(enemyObjects[0]);
     }
 
+  }
+
+  void SpawnInitialEnemies() {
+    for (int i = 0; i < maxNumEnemies; i++) {
+      SpawnEnemy();
+    }
   }
 
   private void destroyEnemy(GameObject enemyObject) {

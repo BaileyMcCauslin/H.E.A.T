@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
         arrowImage.rectTransform.rotation = Quaternion.Euler(0f, 0f, -playerRotation);
 
         // Set the position of the arrow in front of the player
-        float distanceInFront = 6.0f; // Adjust this value based on how far in front you want the arrow
+        float distanceInFront = 4.0f; // Adjust this value based on how far in front you want the arrow
         Vector3 newPosition = transform.position + transform.forward * distanceInFront;
         newPosition.y = transform.position.y; // Maintain the same height
         arrowImage.rectTransform.position = Camera.main.WorldToScreenPoint(newPosition);

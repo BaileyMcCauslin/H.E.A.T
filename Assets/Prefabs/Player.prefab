@@ -244,8 +244,8 @@ GameObject:
   - component: {fileID: 484110570479768068}
   - component: {fileID: -9015855370762402122}
   m_Layer: 0
-  m_Name: Green Tank
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,6 +367,9 @@ MonoBehaviour:
   maxSpeed: 11
   tank: {fileID: -9015855370762402122}
   turnSpeed: 100
+  idleEngineSound: {fileID: 0}
+  drivingEngineSound: {fileID: 0}
+  arrowImage: {fileID: 0}
 --- !u!114 &-9015855370762402122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +395,9 @@ MonoBehaviour:
   projectileVelocity: 3500
   ammunition: ffffffff0a0000000a000000
   activeMissile: 0
+  healthBar: {fileID: 0}
+  shotExplosionSound: {fileID: 0}
+  shotFiringSound: {fileID: 0}
 --- !u!1 &3916225007155662313
 GameObject:
   m_ObjectHideFlags: 0
