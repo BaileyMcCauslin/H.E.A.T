@@ -18,7 +18,7 @@ public class AIShoot : MonoBehaviour
         GameObject myGameObject = gameObject;
 
         // You can now perform operations on myGameObject
-        Debug.Log("This script is attached to: " + myGameObject.name);
+        // Debug.Log("This script is attached to: " + myGameObject.name);
     }
 
     // Update is called once per frame
@@ -42,21 +42,21 @@ public class AIShoot : MonoBehaviour
 
         if (playerCollidersArray.Length != 0)
         {
-            print("Player in collider array");
-            print("next fire time: " + nextFireTime);
-            print("Time: " + Time.time);
+            // print("Player in collider array");
+            // print("next fire time: " + nextFireTime);
+            // print("Time: " + Time.time);
             canvas.enabled = true;
             if (Time.time > nextFireTime)
             {
-                print("AI firing");
+                // print("AI firing");
                 nextFireTime = Time.time + fireRate;
-                print("set next fire time: " + nextFireTime);
+                // print("set next fire time: " + nextFireTime);
                 Vector3 barrelTipPosition = transform.position + transform.forward * 6.0f;
                 GameObject currentProj = Instantiate(missile, barrelTipPosition, transform.rotation);
                 currentProj.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
                                                                 (transform.position.x, transform.position.y, projectileVel));
 
-                print("Enemy missile: " + currentProj);
+                // print("Enemy missile: " + currentProj);
             }
         }
         else
