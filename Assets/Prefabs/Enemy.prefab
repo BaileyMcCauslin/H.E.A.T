@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 1008440848834691001}
   - component: {fileID: 5872941206543907047}
   - component: {fileID: -2201042769347659978}
-  - component: {fileID: -4648840520300692386}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -428,19 +427,6 @@ MonoBehaviour:
   fireRate: 2
   shootRadius: 50
   canvas: {fileID: 6952644013731119817, guid: 83696d4e9f213e64995ca28d10f8364d, type: 3}
---- !u!114 &-4648840520300692386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2979374202975465480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdc0a0655f1b6f4cb56f5ad9a09430b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
 --- !u!1 &4240061321372941466
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bc974c230fd514ebeb32cdd1441687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile: {fileID: 0}
+  missile: {fileID: 8362787410197010642, guid: 08338119ba0c943449889713a3e36f21, type: 3}
   projectileVel: 3500
   fireRate: 30
   shootRadius: 50
@@ -556,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdc0a0655f1b6f4cb56f5ad9a09430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
 --- !u!1 &6128524701277287649
 GameObject:
   m_ObjectHideFlags: 0

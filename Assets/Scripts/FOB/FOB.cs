@@ -64,7 +64,7 @@ public class FOB : MonoBehaviour
     //check to see if collision was with a missile
     if (missile != null) {
       health -= missile.damage;
-      // print(gameObject.name + " took " + missile.damage + " damage.\nRemaining health: " + health);
+      print(gameObject.name + " took " + missile.damage + " damage.\nRemaining health: " + health);
       
       if (health <= 0) {
         this.destroyed = true;

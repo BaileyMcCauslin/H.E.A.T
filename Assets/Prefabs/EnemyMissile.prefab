@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2402696767665070201}
   - component: {fileID: -2824184830209736358}
   - component: {fileID: 1156629432672541856}
+  - component: {fileID: 2563761270285659494}
   m_Layer: 0
   m_Name: EnemyMissile
   m_TagString: Missile
@@ -87,25 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2563761270285659494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362787410197010642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cd469fa8a536a4788c34690e7ae6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 1442958107154711632, guid: 0e32bbd85fc442f229d760024dfad599, type: 3}
-  killTime: 0
-  itemExpireTime: 5
-  damage: 50
-  type: 0
-  explosionAudioSource: {fileID: 0}
-  explosionSound: {fileID: 8300000, guid: d53229a4a54e4164c99e849314731210, type: 3}
 --- !u!54 &2843694192649751086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,10 +129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40cd469fa8a536a4788c34690e7ae6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1442958107154711632, guid: 0e32bbd85fc442f229d760024dfad599, type: 3}
   killTime: 0
   itemExpireTime: 5
   damage: 50
   type: 0
+  explosionAudioSource: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: d53229a4a54e4164c99e849314731210, type: 3}
 --- !u!96 &1156629432672541856
 TrailRenderer:
   serializedVersion: 2
@@ -259,3 +244,22 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &2563761270285659494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362787410197010642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cd469fa8a536a4788c34690e7ae6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1442958107154711632, guid: 0e32bbd85fc442f229d760024dfad599, type: 3}
+  killTime: 0
+  itemExpireTime: 5
+  damage: 50
+  type: 0
+  explosionAudioSource: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: d53229a4a54e4164c99e849314731210, type: 3}

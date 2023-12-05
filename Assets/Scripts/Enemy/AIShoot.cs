@@ -34,7 +34,7 @@ public class AIShoot : MonoBehaviour
             if (colliderGameObject.CompareTag("Player"))
             {
                 // Append the collider to the list
-                print("AI detected player");
+                // print("AI detected player");
                 playerColliders.Add(collider);
             }
         }
