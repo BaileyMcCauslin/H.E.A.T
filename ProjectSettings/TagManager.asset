@@ -5,11 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - ground
-  - ai
-  - player
   - Enemy
-  - player_missle
+  - Missile
   layers:
   - Default
   - TransparentFX

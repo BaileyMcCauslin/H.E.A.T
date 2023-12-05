@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -2386533548171162286}
   m_Layer: 0
   m_Name: FOB
-  m_TagString: FOB
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e217f8ebea3ed7bea063d2fd34bd2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  healthBar: {fileID: 0}
+  background: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!65 &-2386533548171162286
 BoxCollider:
   m_ObjectHideFlags: 0

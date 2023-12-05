@@ -41,11 +41,16 @@ public class Enemy : MonoBehaviour
         // Get the GameObject that collided with this object
         GameObject collidingObject = collide.gameObject;
 
-        // Check if the colliding object has the "player_missile" tag
-        if (collidingObject.CompareTag("player_missle"))
+        // Check if the colliding object has the "Missile" tag
+        if (collidingObject.CompareTag("Missile"))
         {
             currentHealth -= 50;
             rectTransform.sizeDelta = new Vector2(rectTransform.rect.width - 40, rectTransform.rect.height);
+        }
+
+        if(currentHealth <= 0) {
+          //Todo add a destroyed tank display?
+          Destroy(gameObject);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Figure8 props to https://forum.unity.com/threads/making-an-object-move-in-a-figure-8-programatically.38007/ CodeBear
-public class AI : MonoBehaviour
+public class AIController : MonoBehaviour
 {
     //Fig 8 info
     public float speed = 2;

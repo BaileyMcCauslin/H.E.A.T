@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 692907534891094489}
   - component: {fileID: 8838394306009765424}
   - component: {fileID: 2563761270285659494}
-  - component: {fileID: 2843694192649751086}
-  - component: {fileID: 2402696767665070201}
+  - component: {fileID: 7775247368264940683}
+  - component: {fileID: 8945019462753146011}
+  - component: {fileID: -6095528198866235948}
   m_Layer: 0
-  m_Name: Red Missile
-  m_TagString: Untagged
+  m_Name: PlayerMissile
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8362787410197010642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bd122cb58a5d8645afd8bf406f31e3f, type: 2}
+  - {fileID: 2100000, guid: 36797ffef13d2934b9df4b1eee1d60ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,7 +103,20 @@ MonoBehaviour:
   itemExpireTime: 5
   damage: 50
   type: 0
---- !u!54 &2843694192649751086
+--- !u!65 &7775247368264940683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362787410197010642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.066178165, y: 0.25, z: 0.27574235}
+  m_Center: {x: 0, y: -0.000000016763806, z: 0.13787118}
+--- !u!54 &8945019462753146011
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +132,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &2402696767665070201
+--- !u!135 &-6095528198866235948
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

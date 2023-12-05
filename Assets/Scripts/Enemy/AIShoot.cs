@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AIShoot : MonoBehaviour
 {
-    public GameObject missle;
+    public GameObject missile;
     public float projectileVel = 3500.0f;
-    public float fireRate = 0.5f;
+    public float fireRate = 2f;
     private float nextFire = 0.0f;
     public float shootRadius = 50.0f;
     public Canvas canvas;
@@ -34,6 +34,7 @@ public class AIShoot : MonoBehaviour
             if (colliderGameObject.CompareTag("Player"))
             {
                 // Append the collider to the list
+                print("AI detected player");
                 playerColliders.Add(collider);
             }
         }
@@ -46,7 +47,7 @@ public class AIShoot : MonoBehaviour
             {
                 nextFire = Time.time + fireRate;
                 Vector3 barrelTipPosition = transform.position + transform.forward * 6.0f;
-                GameObject currentProj = Instantiate(missle, barrelTipPosition, transform.rotation);
+                GameObject currentProj = Instantiate(missile, barrelTipPosition, transform.rotation);
                 currentProj.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
                                                                 (transform.position.x, transform.position.y, projectileVel));
             }
