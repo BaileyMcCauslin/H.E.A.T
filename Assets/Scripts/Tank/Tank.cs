@@ -159,7 +159,7 @@ public class Tank : MonoBehaviour
       currentMissile.GetComponent<Rigidbody>().AddRelativeForce(
               new Vector3(transform.position.x, transform.position.y, projectileVelocity));
 
-      print("shot missile: " + currentMissile);
+      // print("shot missile: " + currentMissile);
     
       shotFiringAudioSource.Play();
 
